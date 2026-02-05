@@ -6,7 +6,6 @@ Fox Walker is an AutoHotkey script designed specifically for users of **Tree Sty
 It creates a transparent "Operation Layer" over your browser, allowing you to navigate, close, and discard tabs using keyboard shortcuts that **completely bypass the heavy sidebar DOM**.
 
 ![Fox Walker HUD Demo](assets/hud-demo.png)
-*(Recommended: Add a screenshot of the HUD overlay here)*
 
 ## 🛑 The Problem
 If you are a "Tab Hoarder" with 500+ tabs in a vertical sidebar, you know the pain:
@@ -62,5 +61,8 @@ You can customize key bindings at the top of the `FoxWalker.ahk` file:
 ```autohotkey
 global KEY_NEXT_TAB     := "^{PgDn}"
 global KEY_DISCARD      := "^!d"
-
+```
 ...
+📝 License
+MIT License. Feel free to modify and fork!
+
