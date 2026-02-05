@@ -21,6 +21,8 @@ X Ops Vanguard originates from a massive, private monolithic environment built f
     
 - **Modular Release:** Rolling out powerful functions one by one.
 
+![Concept Image](tools/01_fox-walker/assets/xops-concept.jpg)
+
 ## 🛠️ Tools
 
 | Tool | Description | Status |
