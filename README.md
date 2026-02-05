@@ -31,8 +31,19 @@ X Ops Vanguard originates from a massive, private monolithic environment built f
 | **Gemini Command Module**               | (Coming Soon)                                                                                                              | 🚧 WIP       |
 
 ## 📦 Requirements
-Most tools in this repository are built with **[AutoHotkey v2](https://www.autohotkey.com/)**.
-Please ensure you have AHK v2 installed on your Windows machine.
+
+The tools in this repository are categorized into **Desktop Automation** (AHK) and **Browser Injection** (UserScripts).
+
+### 🖥️ System & Runtime
+* **Windows 10 / 11**
+* **[AutoHotkey v2](https://www.autohotkey.com/)**
+    * *Required for:* Fox Walker, Focus Dimmer, and system-level automation.
+
+### 🌐 Browser Environment
+* **Mozilla Firefox** (Highly recommended)
+    * *Note: While UserScripts work on any browser, tools like **Fox Walker** are specifically engineered for the Firefox vertical tab ecosystem.*
+* **[Tampermonkey](https://www.tampermonkey.net/)**
+    * *Required for:* Universal Chat Controller, X Auto Liker, and other DOM-manipulation modules.
 
 ## 📜 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
