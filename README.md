@@ -13,7 +13,7 @@ If you find modern GUIs sluggish or inefficient, you are in the right place.
 
 | Tool | Description | Status |
 | :--- | :--- | :--- |
-| **[Fox Walker](./tools/fox-walker)** | A "No-Click" navigation overlay for Firefox vertical tab users (TST/Sidebery). Bypasses sidebar DOM lag. | ✅ **Active** |
+| **[Fox Walker](./tools/01_fox-walker)** | A "No-Click" navigation overlay for Firefox vertical tab users (TST/Sidebery). Bypasses sidebar DOM lag. | ✅ **Active** |
 | **X Keep Satellite** | (Coming Soon) | 🚧 WIP |
 | **X Auto Liker** | (Coming Soon) | 🚧 WIP |
 
