@@ -4,6 +4,8 @@
 
 > *Stop clicking. Start operating.*
 
+![Header Image](tools/01_fox-walker/assets/header-image.jpg)
+
 ## 🚀 Concept
 X Ops Vanguard is a collection of tools designed to bypass UI bottlenecks.
 We focus on **Zero Latency**, **Keyboard-Centric Workflows**, and **Memory Discipline**.
