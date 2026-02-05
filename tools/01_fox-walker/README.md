@@ -62,4 +62,5 @@ You can customize key bindings at the top of the `FoxWalker.ahk` file:
 ```autohotkey
 global KEY_NEXT_TAB     := "^{PgDn}"
 global KEY_DISCARD      := "^!d"
+
 ...
