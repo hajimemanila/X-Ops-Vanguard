@@ -9,13 +9,26 @@ X Ops Vanguard is a collection of tools designed to bypass UI bottlenecks.
 We focus on **Zero Latency**, **Keyboard-Centric Workflows**, and **Memory Discipline**.
 If you find modern GUIs sluggish or inefficient, you are in the right place.
 
+**"Born from the trenches of heavy-duty operations."**
+
+X Ops Vanguard originates from a massive, private monolithic environment built for high-volume workflows and rigorous account management. We are now **decoupling** the most battle-tested and essential features from this core system, refining them into standalone tools, and **releasing them sequentially** to the public.
+
+- **Battle-Tested:** Proven in harsh, real-world environments.
+    
+- **Selectively Extracted:** Only the most effective tools make the cut.
+    
+- **Modular Release:** Rolling out powerful functions one by one.
+
 ## 🛠️ Tools
 
 | Tool | Description | Status |
 | :--- | :--- | :--- |
 | **[Fox Walker](./tools/01_fox-walker)** | A "No-Click" navigation overlay for Firefox vertical tab users (TST/Sidebery). Bypasses sidebar DOM lag. | ✅ **Active** |
-| **X Keep Satellite** | (Coming Soon) | 🚧 WIP |
-| **X Auto Liker** | (Coming Soon) | 🚧 WIP |
+| **Focus Dimmer**                        | A modern, resource-efficient screen dimmer designed for multitasking and "watch-while-working" workflows.                  | 🚧 WIP       |
+| **Keep Satellite**                      | Turn your browser into a command cockpit. Control your Google Keep context from anywhere.                                  | 🚧 WIP       |
+| **Universal Chat Controller**           | Enter for New Line, Ctrl+Enter to Send. Prevent accidental message sending on sites like Gemini, ChatGPT, Claude, Discord. | 🚧 WIP       |
+| **X Auto Liker**                        | (Coming Soon)                                                                                                              | 🚧 WIP       |
+| **Gemini Command Module**               | (Coming Soon)                                                                                                              | 🚧 WIP       |
 
 ## 📦 Requirements
 Most tools in this repository are built with **[AutoHotkey v2](https://www.autohotkey.com/)**.
