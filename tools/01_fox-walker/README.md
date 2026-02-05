@@ -37,6 +37,8 @@ Activate **Walker Mode** by double-tapping `[ESC]`.
 | **L (x2)** | Focus URL | Jumping to the address bar. |
 | **?** | Cheat Sheet | Hold to see keymap. |
 
+![Fox Walker Key Control](assets/key-layout.jpg)
+
 ## ⚙️ Installation & Setup
 
 ### 1. Prerequisites
@@ -65,4 +67,5 @@ global KEY_DISCARD      := "^!d"
 ...
 📝 License
 MIT License. Feel free to modify and fork!
+
 
