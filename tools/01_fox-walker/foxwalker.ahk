@@ -34,6 +34,8 @@ global HUD_FontSize     := 12
 ; --- State Variables ---
 global WalkerMode := false
 global HUD_Gui := ""
+global HUD_Text_Status := ""
+global HUD_Text_Info := ""
 global Cheat_Gui := ""
 
 ; ==========================================================
@@ -221,12 +223,13 @@ ActivateWalker() {
     CreateHUD()
     UpdateHUD("🚀 Walker: ON")
     SoundBeep 1000, 150
-    SetTimer UpdateInfo, 500
+    ; Update Loop (50ms interval for smooth tracking)
+    SetTimer UpdateLoop, 50
 }
 
 DeactivateWalker() {
     global WalkerMode := false
-    SetTimer UpdateInfo, 0
+    SetTimer UpdateLoop, 0
     if (HUD_Gui) {
         HUD_Gui.Destroy()
         global HUD_Gui := ""
@@ -244,17 +247,16 @@ CreateHUD() {
     HUD_Gui.BackColor := HUD_BgColor
     HUD_Gui.SetFont("s" HUD_FontSize " w600", "Segoe UI")
     
-    HUD_Text_Status := HUD_Gui.Add("Text", "c" HUD_Color " Center w400 vStatus", "Initialized")
+    ; Compact Width (300px)
+    HUD_Text_Status := HUD_Gui.Add("Text", "c" HUD_Color " Center w300 vStatus", "Initialized")
     
     HUD_Gui.SetFont("s" (HUD_FontSize - 2) " w400", "Segoe UI")
-    HUD_Text_Info := HUD_Gui.Add("Text", "cWhite Center w400 vInfo", "...")
+    HUD_Text_Info := HUD_Gui.Add("Text", "cWhite Center w300 vInfo", "...")
 
     WinSetTransparent(HUD_Transparent, HUD_Gui.Hwnd)
     
-    ; Position: Bottom Center
-    X_Pos := (A_ScreenWidth / 2) - 200
-    Y_Pos := A_ScreenHeight - 120
-    HUD_Gui.Show("x" X_Pos " y" Y_Pos " NoActivate")
+    ; Initial Show (Correct position will be set by UpdateLoop instantly)
+    HUD_Gui.Show("x0 y0 NoActivate")
 }
 
 UpdateHUD(msg) {
@@ -269,31 +271,50 @@ ResetStatus() {
         HUD_Text_Status.Value := "👁️ Ready"
 }
 
-; --- Info Updater (Parses Window Title) ---
-UpdateInfo() {
-    if (!WalkerMode || !HUD_Gui)
+; --- Main Loop: Position & Content Update ---
+UpdateLoop() {
+    if (!WalkerMode || !HUD_Gui || !WinActive("ahk_class MozillaWindowClass"))
         return
+
+    ; 1. Position Tracking (Bottom Right)
+    try {
+        WinGetPos &WinX, &WinY, &WinW, &WinH, "A"
+        
+        ; Target: Bottom Right (Right margin 360px, Bottom margin 80px)
+        TargetX := WinX + WinW - 360
+        TargetY := WinY + WinH - 80
+        
+        HUD_Gui.GetPos(&CurX, &CurY)
+        
+        ; Only move if position changed (Anti-Jitter)
+        if (CurX != TargetX || CurY != TargetY)
+            HUD_Gui.Move(TargetX, TargetY)
+    }
+
+    ; 2. Content Updating (Anti-Flicker)
     try {
         FullTitle := WinGetTitle("A")
-        ; Remove standard suffixes
         CleanTitle := StrReplace(FullTitle, " - Mozilla Firefox", "")
         CleanTitle := StrReplace(CleanTitle, " — Mozilla Firefox", "")
         
-        ; Extract Container (Assumes "Page Title - ContainerName")
         parts := StrSplit(CleanTitle, [" - ", " — "]) 
         
         if (parts.Length > 1) {
             Container := parts[parts.Length]
             Title := StrReplace(CleanTitle, " - " Container, "")
-            if (StrLen(Title) > 40)
-                Title := SubStr(Title, 1, 38) "..."
+            ; Compact Length Limit
+            if (StrLen(Title) > 30) 
+                Title := SubStr(Title, 1, 28) "..."
             DisplayStr := "[" Container "] " Title
         } else {
-            if (StrLen(CleanTitle) > 45)
-                CleanTitle := SubStr(CleanTitle, 1, 43) "..."
+            if (StrLen(CleanTitle) > 35)
+                CleanTitle := SubStr(CleanTitle, 1, 33) "..."
             DisplayStr := CleanTitle
         }
-        HUD_Text_Info.Value := DisplayStr
+        
+        ; Only update text if changed (Anti-Flicker)
+        if (HUD_Text_Info.Value != DisplayStr)
+            HUD_Text_Info.Value := DisplayStr
     }
 }
 
@@ -307,24 +328,21 @@ ShowCheatSheet() {
     Cheat_Gui.BackColor := "000000"
     Cheat_Gui.SetFont("s10", "Consolas")
     
-    HelpText := "
-    (
-    [ FOX WALKER MAP ]
-    ------------------
-    [ESC] (x2) Toggle ON/OFF
-    [W]        Scroll Up
-    [S]        Scroll Down
-    [A]        Prev Tab
-    [D]        Next Tab
-    [G] (x2)   Discard (Mem)
-    [L] (x2)   Search URL
-    [M] (x2)   Mute Toggle
-    [R] (x2)   Reload
-    [0] (x2)   Close Others
-    [X] (x2)   Close Tab
-    [Z] (x2)   Undo Close
-    [?]        Hold Help
-    )"
+    HelpText := "[ FOX WALKER MAP ]`n"
+    HelpText .= "------------------`n"
+    HelpText .= "[ESC] (x2) Toggle ON/OFF`n"
+    HelpText .= "[W]        Scroll Up`n"
+    HelpText .= "[S]        Scroll Down`n"
+    HelpText .= "[A]        Prev Tab`n"
+    HelpText .= "[D]        Next Tab`n"
+    HelpText .= "[G] (x2)   Discard (Mem)`n"
+    HelpText .= "[L] (x2)   Search URL`n"
+    HelpText .= "[M] (x2)   Mute Toggle`n"
+    HelpText .= "[R] (x2)   Reload`n"
+    HelpText .= "[0] (x2)   Close Others`n"
+    HelpText .= "[X] (x2)   Close Tab`n"
+    HelpText .= "[Z] (x2)   Undo Close`n"
+    HelpText .= "[?]        Hold Help"
     
     Cheat_Gui.Add("Text", "c00FF00", HelpText)
     WinSetTransparent(220, Cheat_Gui.Hwnd)
