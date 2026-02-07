@@ -1,4 +1,4 @@
-# X Ops Vanguard
+# X Ops Vanguard [![X Ops Vanguard - Zero Latency](https://img.shields.io/badge/X_OPS_VANGUARD-Zero_Latency-000000?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/hajimemanila/X-Ops-Vanguard)
 
 **Experimental navigation suites and automation tools for power users.**
 
