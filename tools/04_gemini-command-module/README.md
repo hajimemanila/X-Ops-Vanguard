@@ -16,6 +16,11 @@
 * ** 🛡️ Mode Management:** Strict separation between **Command Mode** (Navigation) and **Edit Mode** (Input). Prevents accidental hotkey triggers while typing.
 * ** 👁️ Focus Shield:** Automatically blurs input fields when in Command Mode to keep focus on the timeline.
 
+（DEMO）
+https://github.com/user-attachments/assets/51db0469-7494-41f0-a73a-704fbbb97909
+
+
+
 ## 🎮 Controls (Command Mode)
 
 | Key | Action | Description |
@@ -47,4 +52,5 @@ const CONFIG = {
         focusBorder: '#00D0FF', // Cyber Blue
         star: '#ffd400',       // Gold
     }
+
 };
