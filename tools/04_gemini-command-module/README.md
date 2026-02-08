@@ -4,7 +4,7 @@
 
 **Gemini Command Module** is a UserScript designed to transform the Google Gemini UI into a keyboard-centric, high-speed command cockpit. It eliminates the friction of manual scrolling and copy-pasting, enabling **"Zero Latency" context extraction** directly into your knowledge base (Obsidian).
 
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-4.0-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-4.9.43-blue?style=for-the-badge)
 
 ## ⚡ Key Features
 
@@ -85,4 +85,5 @@ const CONFIG = {
 ## 📝 License 
 
 MIT License. Feel free to modify and fork!
+
 
