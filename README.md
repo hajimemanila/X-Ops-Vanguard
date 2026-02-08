@@ -30,10 +30,10 @@ X Ops Vanguard originates from a massive, private monolithic environment built f
 | **[Fox Walker](./tools/01_fox-walker)** | A "No-Click" navigation overlay for Firefox vertical tab users (TST/Sidebery). Bypasses sidebar DOM lag. | ✅ **Active** |
 | **Focus Dimmer**                        | A modern, resource-efficient screen dimmer designed for multitasking and "watch-while-working" workflows.                  | 🚧 WIP       |
 | **[Zero Trace](./tools/03_zero-trace)** | A heuristic timeline sanitizer designed for X (formerly Twitter) Unlike traditional "mass deletion" bots that trigger account locks. | 🚧 WIP       |
+| **[Gemini Command Module](./tools/04_gemini-command-module)** | A UserScript designed to transform the Google Gemini UI into a keyboard-centric command cockpit. It can make directly into your knowledge base (Obsidian) | 🚧 WIP |
 | **Keep Satellite**                      | Turn your browser into a command cockpit. Control your Google Keep context from anywhere.                                  | 🚧 WIP       |
 | **Universal Chat Controller**           | Enter for New Line, Ctrl+Enter to Send. Prevent accidental message sending on sites like Gemini, ChatGPT, Claude, Discord. | 🚧 WIP       |
 | **X Auto Liker**                        | (Coming Soon)                                                                                                              | 🚧 WIP       |
-| **Gemini Command Module**               | (Coming Soon)                                                                                                              | 🚧 WIP       |
 
 ## 📦 Requirements
 
