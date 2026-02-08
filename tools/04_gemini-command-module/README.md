@@ -20,7 +20,6 @@
 https://github.com/user-attachments/assets/51db0469-7494-41f0-a73a-704fbbb97909
 
 
-
 ## 🎮 Controls (Command Mode)
 
 | Key | Action | Description |
@@ -37,13 +36,40 @@ https://github.com/user-attachments/assets/51db0469-7494-41f0-a73a-704fbbb97909
 | **/** | **Input** | Enter Edit Mode (Focus input box). |
 | **Esc** | **Command Mode** | Exit Edit Mode / Return to Command Mode. |
 
-## 📦 Installation
+
+## 📥 Installation (Zero Latency)
 
 1.  Install a UserScript manager like **[Tampermonkey](https://www.tampermonkey.net/)**.
-2.  Create a new script and paste the content of `gemini_command_module.js`.
+2.  **[👉 Click here to Install Script (v4.9.43)](./gemini-command-module.user.js)**
+*(Requires Tampermonkey)*
 3.  Open [Google Gemini](https://gemini.google.com/) and press `Esc` to engage.
 
+
+### ⚠️ Troubleshooting (Chrome Users)
+
+If the script does not load after installation:
+1. Open `chrome://extensions`
+2. Enable **Developer mode**
+3. Click **Details** on Tampermonkey
+4. **Turn ON "Allow access to file URLs"** (Crucial step!)
+5. Reload Gemini.
+
+
 ## 🛠️ Configuration
+
+To link your Obsidian Vault directly:
+1. Open Tampermonkey dashboard.
+2. Edit the script.
+3. Locate the `CONFIG` object at the top.
+
+```javascript
+const CONFIG = {
+    // Set your vault name here (e.g., "MyNotes")
+    obsidianVault: "YOUR_VAULT_NAME",
+    // ...
+};
+```
+
 You can customize colors and URI schemes in the `CONFIG` object at the top of the script.
 
 ```javascript
@@ -54,3 +80,9 @@ const CONFIG = {
     }
 
 };
+```
+
+## 📝 License 
+
+MIT License. Feel free to modify and fork!
+
