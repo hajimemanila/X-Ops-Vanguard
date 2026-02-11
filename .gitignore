@@ -1,0 +1,24 @@
+# System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Obsidian Vaults & Configs
+.obsidian/
+*.md.tmp
+geminidev/
+private/
+docs/vault/
+obsidian_md/
+original_scripts/
+
+# User Specific
+.vscode/
+*.log
+*.tmp
+*.bak
+
+# Secrets
+.env
+keys.js
+secrets.json

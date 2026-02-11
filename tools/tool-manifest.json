@@ -1,0 +1,26 @@
+[
+  {
+    "name": "01-fox-walker",
+    "description": "Firefox Navigation & HUD",
+    "version": "4.0",
+    "platform": "AutoHotkey",
+    "tech": [".ahk"],
+    "status": "Beta"
+  },
+  {
+    "name": "08-watchman-agent",
+    "description": "Automated Tab Cycling & Monitoring",
+    "version": "1.0",
+    "platform": "AutoHotkey",
+    "tech": [".ahk"],
+    "status": "Beta"
+  },
+  {
+    "name": "09-window-velocity",
+    "description": "Window Layout & Multitasking Engine",
+    "version": "1.0",
+    "platform": "AutoHotkey",
+    "tech": [".ahk"],
+    "status": "Beta"
+  }
+]
