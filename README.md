@@ -28,7 +28,7 @@ Modern web interfaces are designed for **retention**—slowing you down to show 
 
 ## 📂 The Arsenal
 
-### 🔴 X (Twitter) Ops
+### 🔴 Social Ops
 | Tool | Description | Tech |
 | :--- | :--- | :--- |
 | **[Timeline Walker](tools/05-timeline-walker)** | Keyboard-driven navigation, "Zen" mode, and autopilot scrolling. | `.user.js` + `.ahk` |
